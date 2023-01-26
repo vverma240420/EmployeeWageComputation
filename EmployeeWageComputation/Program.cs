@@ -11,23 +11,24 @@
 
             Console.WriteLine("Welcome to EmployeeWage Computation");
 
-            //UC3- PartTimeWage
+            //UC4- SwitchCase
             Random random = new Random();
             int empAttendence = random.Next(0, 3); //0 or 1 or 2 it will generate
-            if(empAttendence == FULL_TIME)
+            switch (empAttendence)
             {
-                Console.WriteLine("Full time employee is Present");
-                empHrs = 8;
-            }
-            else if(empAttendence == PART_TIME)
-            {
-                Console.WriteLine("Part time employee is present");
-                empHrs = 4;
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                //empHrs = 0;
+                case FULL_TIME:
+                    Console.WriteLine("Full time employee is present");
+                    empHrs = 8;
+                    break;
+
+                case PART_TIME:
+                    Console.WriteLine("Part time employee is present");
+                    empHrs = 4;
+                    break;
+
+                default:
+                    Console.WriteLine("Employee is absent");
+                    break;
             }
             empWage = empHrs * EMP_RATE_PER_HR;
             //Console.WriteLine("Employee wage:"+empWage);  old way
